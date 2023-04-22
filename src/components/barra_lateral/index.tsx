@@ -1,6 +1,7 @@
 import {
   LateralBarContainer,
   LateralBarStyle,
+  ListedItem,
   MyNameContainer,
   OptionsContainerRemoveStyle,
   OptionsContainerStyle,
@@ -11,7 +12,14 @@ import { BiMenu } from "react-icons/bi";
 import { useState } from "react";
 
 function LateralBar() {
+
   const [ menuOpen, setMenuOpen ] = useState(false)
+
+  const [ selectedMenu, setSelectedMenu ] = useState<number | null>(null)
+
+  const handleSelectedMenu = (itemIndex: number) => {
+    setSelectedMenu(itemIndex)
+  }
 
   const handleToggle = () => {
     setMenuOpen(!menuOpen)
@@ -28,10 +36,6 @@ function LateralBar() {
           <BiMenu onClick={() => handleToggle()} className="lateralbar-menu-menu" />
         </div>
         <div className="about-me-container-all">
-          <a className="about-me-container" href="">
-            <BsFillQuestionCircleFill />
-            <span className="about-me">About me</span>
-          </a>
           <a
             className="whatsapp"
             href="https://wa.me/5585996872527"
@@ -44,26 +48,26 @@ function LateralBar() {
       { menuOpen === true ? 
       <OptionsContainerStyle>
         <ul>
-          <li>
+          <ListedItem selected={ selectedMenu === 0 }  onClick={() => handleSelectedMenu(0)}>
             <BsPersonCircle />
             <button>SOBRE MIM</button>
-          </li>
-          <li>
+          </ListedItem>
+          <ListedItem selected={ selectedMenu === 1 }  onClick={() => handleSelectedMenu(1)}>
             <BsFillClipboardDataFill />
             <button>HABILIDADES</button>
-          </li>
-          <li>
+          </ListedItem>
+          <ListedItem selected={ selectedMenu === 2 }  onClick={() => handleSelectedMenu(2)}>
             <BsFillFileEarmarkFill />
             <button>PROJETOS</button>
-          </li>
-          <li>
+          </ListedItem>
+          <ListedItem selected={ selectedMenu === 3 }  onClick={() => handleSelectedMenu(3)}>
             <BsFillCloudDownloadFill />
             <button>DOWNLOAD CV</button>
-          </li>
-          <li>
+          </ListedItem>
+          <ListedItem selected={ selectedMenu === 4 }  onClick={() => handleSelectedMenu(4)}>
             <BsTelephoneFill />
             <button>CONTATOS</button>
-          </li>
+          </ListedItem>
         </ul>
       </OptionsContainerStyle> : <OptionsContainerRemoveStyle>
         <ul>

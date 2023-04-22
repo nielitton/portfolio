@@ -25,6 +25,10 @@ const GlobalStyle = createGlobalStyle`
     a, button {
         cursor: pointer;
     }
+    .App {
+        display: flex;
+        align-items: center;
+    }
 
     article, aside, details, figcaption, figure, 
     footer, header, hgroup, menu, nav, section {
@@ -32,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-	    line-height: 1;
+        line-height: 1;
         background-color: var(--primary-color);
         color: var(--white-color);
     }

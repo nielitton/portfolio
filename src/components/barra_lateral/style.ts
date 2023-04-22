@@ -2,11 +2,12 @@ import styled from "styled-components";
 
 export const LateralBarContainer = styled.div`
     display: flex;
+    width: 25%;
 `
 
 export const LateralBarStyle = styled.div`
     z-index: 1;
-    width: 7%;
+    width: 25%;
     background-color: var(--full-black);
     height: 100vh;
     box-shadow: 0px 5px;
@@ -21,6 +22,7 @@ export const LateralBarStyle = styled.div`
     }
     .lateralbar-menu {
         display: flex;
+        width: 65%;
         align-items: center;
         justify-content: center;
         transition:  .3s;
@@ -28,9 +30,8 @@ export const LateralBarStyle = styled.div`
         margin-top: 18rem;
         font-size: 2rem;
         cursor: pointer;
-        width: 55%;
         background-color: var(--primary-color);
-        height: 50px;
+        height: 55px;
         border-radius: 50%;
     }
     .lateralbar-menu:hover {
@@ -71,11 +72,13 @@ export const MyNameContainer = styled.div`
     }
 `
 
+
+
 export const OptionsContainerStyle = styled.div`
     @keyframes ligarMenu {
         0% {
             opacity: 0;
-            transform: translateX(-100%);
+            transform: translateX(-75%);
         }
         100% {
             opacity: 1;
@@ -90,7 +93,7 @@ export const OptionsContainerStyle = styled.div`
     animation-timing-function: ease; 
     animation-fill-mode: both;
     background-color: var(--gray-color);
-    width: 20%;
+    width: 75%;
     border-right: 1px solid var(--gray-color-2);
     display: flex;
     justify-content: center;
@@ -103,17 +106,6 @@ export const OptionsContainerStyle = styled.div`
         width: 100%;
         justify-content: center;
     }
-    li {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--white-color);
-        font-size: 22px;
-    }
-    li:hover {
-        color: var(--spotify-color)
-    }
     li button {
         color: inherit;
         text-align: left;
@@ -122,10 +114,22 @@ export const OptionsContainerStyle = styled.div`
         font-size: inherit;
         width: 70%;
         border-radius: 0px 20px 20px 0px;
-        height: 45px;
+        height: 40px;
         border: none;
         font-weight: bold;
         background-color: var(--transparent);
+    }
+`
+
+export const ListedItem = styled.li<{ selected: boolean }>`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: ${(props) => (props.selected ? "var(--spotify-color)" : "var(--white-color)")};
+    font-size: 22px;
+    :hover {
+        color: var(--spotify-color)
     }
 `
 
@@ -148,7 +152,7 @@ export const OptionsContainerRemoveStyle = styled.div`
     animation-timing-function: ease; 
     animation-fill-mode: both;
     background-color: var(--gray-color);
-    width: 20%;
+    width: 75%;
     border-right: 1px solid var(--gray-color-2);
     display: flex;
     justify-content: center;
@@ -161,17 +165,6 @@ export const OptionsContainerRemoveStyle = styled.div`
         width: 100%;
         justify-content: center;
     }
-    li {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--white-color);
-        font-size: 22px;
-    }
-    li:hover {
-        color: var(--spotify-color)
-    }
     li button {
         color: inherit;
         text-align: left;
@@ -180,7 +173,7 @@ export const OptionsContainerRemoveStyle = styled.div`
         font-size: inherit;
         width: 70%;
         border-radius: 0px 20px 20px 0px;
-        height: 45px;
+        height: 40px;
         border: none;
         font-weight: bold;
         background-color: var(--transparent);
