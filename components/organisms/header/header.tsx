@@ -34,7 +34,7 @@ export function Header() {
                             transition: { type: 'tween', stiffness: 300 },
                         }}
                     >
-                        <Link className="hover:text-blueDark" href={"#"}>SOBRE MIM</Link>
+                        <Link className="hover:text-blueDark" href={"#"}>FALE COMIGO</Link>
                     </motion.div>
                 </ul>
             </nav>
